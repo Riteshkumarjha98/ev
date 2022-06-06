@@ -1,94 +1,55 @@
 package com.p3;
 
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.p4.Customer;
-
 public class Demo {
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		String username = input.next();
-		String password = input.next();
-		String mobileNumber = input.next();
-		String email = input.next();
-		if(inputValidation(username, password, mobileNumber, email)) {
-			Customer customer = new Customer();
-			customer.setEmail(email);
-			customer.setMobileNumber(mobileNumber);
-			customer.setPassword(password);
-			customer.setUsername(username);
-			
-			System.out.println("username is " + customer.getUsername());
-			System.out.println("mobile number is " + customer.getMobileNumber());
-			System.out.println("password is " + customer.getPassword());
-			System.out.println("email is " + customer.getEmail());
+		Demo demo = new Demo();	
+		Month m = Month.JAN;
+		demo.showDetails(m);
+	}
+	void showDetails(Month m) {
+		try {
+			switch(m) {
+				case JAN:
+			System.out.println("This is 1st the month of the year January");
+				break;
+				case FEB:
+			System.out.println("This is 2nd the month of the year February");
+				break;
+				case MAR:
+			  System.out.println("This is 3rd the month of the year March");
+				break;
+				case APR:
+			System.out.println("This is 4th the month of the year April");
+		     	break;
+				case MAY:
+		  System.out.println("This is 5th the month of the year May");
+				break;
+				case JUN:
+          System.out.println("This is 6th the month of the year June");
+				break;
+				case JUL:
+		  System.out.println("This is 7th the month of the year July");
+				break;
+				case AUG:
+		 System.out.println("This is 8th the month of the year August");
+				break;
+				case SEP:
+		System.out.println("This is 9th the month of the year September");
+				break;
+				case OCT:
+	   System.out.println("This is 10th the month of the year October");
+				break;
+				case NOV:
+		System.out.println("This is 11th the month of the year November");
+				break;
+				case DEC:
+		System.out.println("This is 12th the month of the year December");
+				break;
+			}
 		}
-		else {
-			System.out.println("Validation error");
+		catch(Exception Exeception){
+			System.out.println("Invalid month");
 		}
 	}
-	
-	static boolean inputValidation(String username,String password,String mobileNumber,String email) {
-		Pattern user = Pattern.compile("[a-zA-Z]");
-		Matcher u = user.matcher(username);
 		
-		
-		Pattern pass = Pattern.compile("[a-zA-Z0-9]");
-		Matcher p = pass.matcher(password);
-		Pattern mob = Pattern.compile("[0-9]");
-		Matcher m = mob.matcher(mobileNumber);
-		Pattern em = Pattern.compile("@");
-		Matcher e = em.matcher(email);
-//		Pattern pass = Pattern.compile("")
-		if(username.length() >= 3 && username.length() <= 8) {
-			int count = 0;
-			while(u.find()) {
-				count++;
-			}
-			if(count < username.length()) {
-				return false;
-			}
-		}
-		else {
-			return false;
-		}
-		
-		if(password.length() >= 3 && password.length() <= 8) {
-			int count = 0;
-			while(p.find()) {
-				count++;
-			}
-			if(count < password.length()) {
-				return false;
-			}
-		}
-		else {
-			return false;
-		}
-		
-		if(mobileNumber.length() == 10) {
-			int count = 0;
-			String f = Character.toString(mobileNumber.charAt(0));
-			if(f != "6" || f != "7" || f != "8" || f != "9" ) {
-				return false;
-			}
-			while(m.find()) {
-				count++;
-			}
-			if(count < mobileNumber.length()) {
-				return false;
-			}
-		}
-		else {
-			return false;
-		}
-		
-		if(e.find()) {
-			return false;
-		}
-		
-		return true;
-	}
 }

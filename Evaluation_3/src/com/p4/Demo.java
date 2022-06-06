@@ -35,11 +35,14 @@ public class Demo {
 		
 		Pattern pass = Pattern.compile("[a-zA-Z0-9]");
 		Matcher p = pass.matcher(password);
+		
 		Pattern mob = Pattern.compile("[0-9]");
 		Matcher m = mob.matcher(mobileNumber);
+		
 		Pattern em = Pattern.compile("@");
 		Matcher e = em.matcher(email);
-//		Pattern pass = Pattern.compile("")
+		
+
 		if(username.length() >= 3 && username.length() <= 8) {
 			int count = 0;
 			while(u.find()) {

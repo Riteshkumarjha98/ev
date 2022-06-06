@@ -1,6 +1,6 @@
 package com.p2;
 
-public class Employee {
+public abstract class Employee {
 	
 	protected  Integer emplyoeedId;
 	  protected String emplyoeeName;
@@ -28,6 +28,10 @@ public class Employee {
 		super();
 		this.emplyoeedId = emplyoeedId;
 		this.emplyoeeName = emplyoeeName;
+	}
+	void calculateSalary() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
