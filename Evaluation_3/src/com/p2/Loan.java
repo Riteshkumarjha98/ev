@@ -24,9 +24,5 @@ public class Loan {
 		return loanAmount;
 	}
 	
-	public static Loan generateLoanClass() {
-		Loan l = new Loan();
-		return l;
-	}
 	
 }

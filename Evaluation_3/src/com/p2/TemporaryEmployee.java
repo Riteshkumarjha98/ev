@@ -1,5 +1,7 @@
 package com.p2;
+
 public class TemporaryEmployee extends Employee{
+	
 	private int hoursWorked;
 	private int hourlyWages;
 	
